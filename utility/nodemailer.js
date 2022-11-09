@@ -6,7 +6,6 @@ export const sendMail = async(str, userName, email, link="")=>{
        port: 587,
        secure: false,
        auth: {
-          type: 'OAuth2',
           user: process.env.USER,
           pass: process.env.PASSWORD
        }

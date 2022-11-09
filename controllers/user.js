@@ -98,7 +98,7 @@ export const forgotPassword = async(req, res)=>{
          const payload = {email, id}
 
          const token = jwt.sign(payload, secret, {expiresIn: '15m'})
-         const link = `http://localhost:3000/resetPassword/${id}/${token}`
+         const link = `https://memories-project-full-stack.netlify.app/resetPassword/${id}/${token}`
 
          sendMail("resetPassword", existingUser.name, existingUser.email, link)
 

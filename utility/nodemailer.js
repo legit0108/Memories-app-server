@@ -26,10 +26,12 @@ export const sendMail = async(str, userName, email, link="")=>{
         Note that this is a one time link and will expire in 15 minutes.`
     }
 
-    let info = await transporter.sendMail({
-        from: process.env.USER,
-        to: email,
-        subject,
-        html
+    await new Promise((resolve, reject)=>{
+        transporter.sendMail({
+            from: process.env.USER,
+            to: email,
+            subject,
+            html
+        })
     })
 }

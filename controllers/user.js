@@ -102,7 +102,7 @@ export const forgotPassword = async(req, res)=>{
 
          sendMail("resetPassword", existingUser.name, existingUser.email, link)
 
-         return res.status(200).json({message: "User found"})
+         return res.status(200).json({message: "User found", link})
          
       }else return res.status(404).json({message: "User not found"})
    }catch(error){
